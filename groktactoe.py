@@ -1,4 +1,4 @@
-from openai import OpenAI, completions
+from openai import OpenAI
 from tictactoe import TicTacToe
 import os
 
