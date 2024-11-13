@@ -1,14 +1,14 @@
 import numpy as np
 
 
-EMPTY, X, O = 0, 1, 2
-SYMBOLS = {EMPTY: ".", X: "X", O: "O"}
+EMPTY, PLAYER_X, PLAYER_O = 0, 1, 2
+SYMBOLS = {EMPTY: ".", PLAYER_X: "X", PLAYER_O: "O"}
 
 
 class TicTacToe:
     def __init__(self):
         self.board = np.zeros((3, 3), dtype=int)
-        self.player = X
+        self.player = PLAYER_X
         self.draw = False
 
     def make_move_at_pos(self, pos):
@@ -21,7 +21,7 @@ class TicTacToe:
         if self.is_valid_move(move):
             self.make_move_at_pos(move)
             if not self.is_over():
-                self.player = X if self.player == O else O
+                self.player = PLAYER_X if self.player == PLAYER_O else PLAYER_O
         else:
             raise ValueError
 
@@ -52,11 +52,11 @@ class TicTacToe:
 if __name__ == "__main__":
     game = TicTacToe()
     print(game.board)
-    print("Testing make move of X at 0, 0")
+    print("Testing make move of PLAYER_X at 0, 0")
     game.make_move_at_pos((0, 0))
     print(game.board)
-    print("Testing making move of O at 0, 1")
-    game.player = O
+    print("Testing making move of PLAYER_O at 0, 1")
+    game.player = PLAYER_O
     game.make_move_at_pos((0, 1))
     print(game.board)
     print(game.is_over())
