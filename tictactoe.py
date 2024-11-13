@@ -9,6 +9,7 @@ class TicTacToe:
     def __init__(self):
         self.board = np.zeros((3, 3), dtype=int)
         self.player = X
+        self.draw = False
 
     def make_move_at_pos(self, pos):
         self.board[pos] = self.player
@@ -38,6 +39,7 @@ class TicTacToe:
                 return True
         # Check for draw
         if not np.any(self.board == 0):
+            self.draw = True
             return True
         return False
 

@@ -56,5 +56,14 @@ def play_game():
             print(e)
             print("Something went wrong, try again!")
 
+    print("Game over!")
+    if game.draw == True:
+        print("It's a draw")
+    elif game.player == 1:
+        print("Grok wins!")
+    else:
+        print("You win :)")
+    print(game)
+
 
 play_game()
