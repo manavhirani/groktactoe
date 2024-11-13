@@ -8,6 +8,7 @@ def valid_moves(board):
 
 
 def play_game():
+    
     # This game will play until completion
     game = TicTacToe()
     print("Initialized empty game")
@@ -22,7 +23,9 @@ def play_game():
     )
 
     system_prompt = "You are a professional TicTacToe Player, You will be given a TicTacToe board and you need to respond with your prefered moves in 0 based indexing of rows and columns, respond in the form 'r c', that is a row and column seperated by a single space character, e.g. if I want to make the move 2, 2, I would just print 2 2"
+    
     safety = 12
+    
     # Game loop
     while not game.is_over() and safety != 0:
         # Get input for the moves
@@ -56,8 +59,10 @@ def play_game():
             print(e)
             print("Something went wrong, try again!")
 
+    
     print("Game over!")
-    if game.draw == True:
+    
+    if game.draw:
         print("It's a draw")
     elif game.player == 1:
         print("Grok wins!")
